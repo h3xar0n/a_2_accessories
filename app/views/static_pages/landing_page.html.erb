@@ -1,0 +1,8 @@
+<div class="container-fluid">
+	<h1>Featured Product:</h1>
+	<h2><%= @featured_product.name %></h2>
+	<%= image_tag(@featured_product.image_url, class: "img-responsive") %>
+	<p><%= @featured_product.description %></p>
+	<p><strong>Colour: </strong><%= @featured_product.colour %></p>
+	<p><strong>$<%= @featured_product.price %></strong></p>
+</div>
