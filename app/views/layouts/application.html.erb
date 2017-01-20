@@ -27,9 +27,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#skills-sec">Contact</a></li>
+            <li></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Carousel", landing_page_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+            <li><%= link_to "Products", products_path %></li>
           </ul>
         </div> <!-- nav -->
       </div> <!-- end nav container-->
@@ -43,7 +45,7 @@
 
     <footer class="footer">
       <div class="container">
-        &copy; 2016 Eidelbikes
+        &copy; 2017 A<sup>2</sup> Accessories
       </div>
     </footer>
   </body>
