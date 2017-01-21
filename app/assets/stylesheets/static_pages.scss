@@ -119,3 +119,13 @@ input[type="submit" i]:hover {
   background-color: yellow;
   transition-duration: 0.4s;
 }
+
+.contact-and-submit {
+  padding-left: 15px;
+  font-family: lato, sans-serif;
+}
+
+.contact-and-submit .form-control {
+  color: white;
+  background: #44166a;
+}
