@@ -1,0 +1,26 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.center-content {
+	text-align: center;
+	font-family: lato, sans-serif;
+
+}
+
+.center-content .field {
+	font-size: 13px;
+	margin-top: 20px;
+	label, input {
+	display: inline;
+	}
+	label {
+		padding-right: 15px;
+	}
+	input {
+		min-width: 30%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
