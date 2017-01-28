@@ -7,7 +7,9 @@
     <div class="col-md-6 col-xs-12">
       <div class="col-sm-6 col-xs-12">
         <h2><%= @product.name %></h2>
-        <p class="product-page">Average Rating: <span class="rated" data-score="<%= @product.average_rating %>"></span> </p>
+        <% if !@product.comments.empty? %>  
+          <p class="product-page">Average Rating: <span class="rated" data-score="<%= @product.average_rating %>"></span> </p>
+        <% end %>
         <h5 class="product-page"><%= @product.colour %></h5>
         <p class="product-page"><%= @product.description %></p>
       </div>
@@ -16,16 +18,18 @@
         <button type="button" class="btn btn-primary btn-lg">Add to Cart</button>
       </div>
       <div class="clearfix visible-sm visible-md visible-lg"></div>
-      <div class="col-sm-6 col-xs-12">
-        <h4 class="product-indent">Best Review:</h4>
-        <div class="rated product-indent" data-score="<%= @product.highest_rating_comment.rating %>"></div>
-        <p>"<%= @product.highest_rating_comment.body%>"</p>
-      </div>
-      <div class="col-sm-6 col-xs-12">
-        <h4 class="product-indent">Worst Review:</h4>
-        <div class="rated product-indent" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
-        <p>"<%= @product.lowest_rating_comment.body%>"</p>
-      </div>
+      <% if !@product.comments.empty? %>
+        <div class="col-sm-6 col-xs-12">
+          <h4 class="product-indent">Best Review:</h4>        
+          <div class="rated product-indent" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+          <p>"<%= @product.highest_rating_comment.body%>"</p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <h4 class="product-indent">Worst Review:</h4>
+          <div class="rated product-indent" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+          <p>"<%= @product.lowest_rating_comment.body%>"</p>
+        </div>
+      <% end %>
     </div>
   </div>
 
