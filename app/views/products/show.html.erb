@@ -2,48 +2,41 @@
   <p id="notice"><%= notice %></p>
   <div class="row">
     <div class="col-md-6 col-xs-12">
-      <%= image_tag(@product.image_url, class: "img-responsive detail") %>
+      <%= image_tag(@product.image_url, class: "img-responsive detail product-image") %>
     </div>
     <div class="col-md-6 col-xs-12">
-      <div class="grid-description-detail">
-        <div class="description-detail">
-          <div class="">
-            <h3><%= @product.name %></h3>
-            <h5>$<%= @product.price %></h5>
-            <h5><%= @product.colour %></h5>
-            <p><%= @product.description %></p>
-          </div>
-        </div>
+      <div class="col-sm-6 col-xs-12">
+        <h2><%= @product.name %></h2>
+        <p class="product-page">Average Rating: <span class="rated" data-score="<%= @product.average_rating %>"></span> </p>
+        <h5 class="product-page"><%= @product.colour %></h5>
+        <p class="product-page"><%= @product.description %></p>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <h1>$<%= @product.price %></h1>
+        <button type="button" class="btn btn-primary btn-lg">Add to Cart</button>
+      </div>
+      <div class="clearfix visible-sm visible-md visible-lg"></div>
+      <div class="col-sm-6 col-xs-12">
+        <h4 class="product-indent">Best Review:</h4>
+        <div class="rated product-indent" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+        <p>"<%= @product.highest_rating_comment.body%>"</p>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <h4 class="product-indent">Worst Review:</h4>
+        <div class="rated product-indent" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+        <p>"<%= @product.lowest_rating_comment.body%>"</p>
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-md-6 col-xs-12"> 
-
-      <% if !@product.comments.empty? %>
-        
-        <h3>User Ratings</h3>
-        <div class="col-md-6 col-xs-12">
-            <div class="container-rating">
-              <% @product.highest_rating_comment.rating.times do %>
-                <span class="glyphicon glyphicon glyphicon-star" aria-hidden="true"></span>
-              <% end %>
-              <h5>Best Review:</h5>
-              <p>"<%= @product.highest_rating_comment.body%>"</p>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12">
-            <div class="container-rating">
-              <% @product.lowest_rating_comment.rating.times do %>
-                <span class="glyphicon glyphicon glyphicon-star" aria-hidden="true"></span>
-              <% end %>
-              <h5>Worst Review:</h5>
-              <p>"<%= @product.lowest_rating_comment.body%>"</p>
-            </div>
-        </div>
-
-      <% end %>
+    <div class="col-md-6 col-xs-12 text-center">
+      <%= render partial: "new_comment" %>
     </div>
+    <div class="col-md-6 col-xs-12 text-center">
+      <%= render partial: "comments" %>
+    </div>
+    
   </div>
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
