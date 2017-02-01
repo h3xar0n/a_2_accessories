@@ -131,3 +131,9 @@ label {
 .product-row {
   margin-left: 15px;
 }
+
+.user-table {
+  thead th, tbody tr {
+  min-width: 100px;
+  }
+} 

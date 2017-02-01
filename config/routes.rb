@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :orders, only: [:index, :show, :create, :destroy]
-  root 'static_pages#index'
+  root 'static_pages#landing_page'
   controller :static_pages do
 	  get :landing_page
 	  get :contact
+    get :about
 	end
 	post 'static_pages/thank_you'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
