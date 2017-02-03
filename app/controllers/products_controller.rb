@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+  before_action :validate_admin, only: [:edit]
   # GET /products
   # GET /products.json
 def index
@@ -38,7 +39,7 @@ end
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to "/landing_page" }
+        format.html { redirect_to "/products" }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -83,5 +84,9 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
+    end
+
+    def validate_admin
+      redirect_to root_path unless current_user.admin?
     end
 end
