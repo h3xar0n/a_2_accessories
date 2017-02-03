@@ -1,18 +1,20 @@
-  <h1>Products</h1>
+<h1>Products</h1>
 
-  <div class="product-search">
-    <%= form_tag("/products", method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-  <% end %>
-  </div>
+<div class="product-search">
+  <%= form_tag("/products", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
 
-  <div class="row product-row">
-    <%= render @products %>
-  </div>
+<div class="row product-row">
+  <%= render @products %>
+</div>
 
 
-  <br>
+<br>
 
+<% if signed_in? && current_user.admin? %>
   <%= link_to 'New Product', new_product_path %>
+<% end %>
