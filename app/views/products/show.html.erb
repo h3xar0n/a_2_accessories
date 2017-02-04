@@ -23,6 +23,7 @@
 
 <!-- Only display if there are reviews -->
 <% if !Comment.where("product_id = ?", @product.id).empty? %>
+  
   <!-- Best and Worst Reviews -->
     <div class="row text-center">
       <div class="col-sm-6 col-xs-12">
@@ -44,6 +45,7 @@
     <%= render partial: "comments" %>
     <%= will_paginate @comments %>
   </div>
+
 <% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
