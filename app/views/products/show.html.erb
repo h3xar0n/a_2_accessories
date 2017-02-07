@@ -13,7 +13,9 @@
     </div>
     <div class="col-sm-6 col-xs-12 text-center" id="cart-adding">
       <h1>$<%= @product.price %></h1>
-      <button type="button" class="btn btn-primary btn-lg">Add to Cart</button>
+      <%= form_tag "/payments/create" do %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+      <% end %>
     </div>
     <div class="col-sm-12 text-center">
         <%= render partial: "new_comment" %>
