@@ -67,3 +67,4 @@ end
 
 gem 'rails-controller-testing'
 gem 'stripe'
+gem 'brakeman', '~> 3.5'
