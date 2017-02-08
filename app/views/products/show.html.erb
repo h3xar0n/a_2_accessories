@@ -13,7 +13,9 @@
     </div>
     <div class="col-sm-6 col-xs-12 text-center" id="cart-adding">
       <h1>$<%= @product.price %></h1>
+      <!-- Stripe -->
       <%= form_tag "/payments/create" do %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
         <%= render partial: "shared/stripe_checkout_button" %>
       <% end %>
     </div>
