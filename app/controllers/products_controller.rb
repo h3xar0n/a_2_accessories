@@ -75,6 +75,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
+      byebug
       @product = Product.find(params[:id])
     rescue
       flash[:notice] = "Sorry we couldn't find that product"
