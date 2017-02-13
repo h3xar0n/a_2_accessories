@@ -12,4 +12,10 @@ class Product < ApplicationRecord
 	def average_rating
 	  comments.average(:rating).to_f
 	end
+	def total_comment
+		unless $redis.keys.include?("total_comment_#{id}")
+			$redis.set("totalComment", comments.count)
+		end
+		$redis.get("totalComment")
+	end
 end
