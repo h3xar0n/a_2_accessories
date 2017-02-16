@@ -21,6 +21,7 @@
     </div>
     <div class="col-sm-12 text-center">
         <%= render partial: "new_comment" %>
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
     </div>
   </div>
 <% end %>
@@ -47,7 +48,6 @@
   <div class="text-center">
     <h4 id="total-review">All <%= @product.total_comment %> Reviews:</h4>
     <%= will_paginate @comments %>
-    <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
     <%= render partial: "comments" %>
     <%= will_paginate @comments %>
   </div>
