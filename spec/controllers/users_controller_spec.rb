@@ -12,7 +12,7 @@ describe UsersController, :type => :controller do
           sign_in @user
         end
 
-        it 'loads correct user details' do 
+        it 'Loads correct user details' do 
           get :show, id: @user.id
           expect(response).to be_success
           expect(response).to have_http_status(200)
@@ -21,7 +21,7 @@ describe UsersController, :type => :controller do
       end
 
     context 'No user is logged in' do
-        it 'redirects to login' do
+        it 'Redirects to login' do
           get :show, id: @user.id
           expect(response).to redirect_to(root_path)
        end

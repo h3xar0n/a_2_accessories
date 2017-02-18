@@ -1,1 +1,9 @@
 require 'rails_helper'
+
+describe Comment do
+  
+  it "is not valid" do
+    expect(Comment.new(body: "I am too cool to use stars.", rating: "nil")).not_to be_valid
+  end
+  
+end
