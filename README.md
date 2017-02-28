@@ -1,6 +1,6 @@
 ### A² Accessories
 
-This production-ready app is intended to showcase my abilities with Ruby on Rails. It's currently hosted on Heroku.
+This production-ready app is intended to showcase my abilities with Ruby on Rails. It's a wedding accessory store in the same style as the site I made for Glam by Adelina (www.glambyadelina.com), and will be used for real transactions once I add a cart and shipping feature.
 
 ## Features
 
