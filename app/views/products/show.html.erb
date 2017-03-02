@@ -27,7 +27,7 @@
 <% end %>
 
 <!-- Only display if there are reviews -->
-<% if !Comment.where("product_id = ?", @product.id).empty? %>
+<% if @ratings %>
   
   <!-- Best and Worst Reviews -->
     <div class="row text-center">
