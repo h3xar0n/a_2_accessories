@@ -11,8 +11,16 @@ RSpec.describe ProductsController, type: :controller do
       before do
         sign_in user
   		end
-      it "user cannot delete product" do
+      it "non-admin user cannot delete product" do
         delete :destroy, params: {id: product.id}
+        expect(response).to have_http_status(302)
+      end
+      it "non-admin user cannot create product" do
+        get :new
+        expect(response).to have_http_status(302)
+      end
+      it "non-admin user cannot update product" do
+        get :edit, params: {id: product.id}
         expect(response).to have_http_status(302)
       end
     end
@@ -25,17 +33,16 @@ RSpec.describe ProductsController, type: :controller do
         delete :destroy, params: {id: product.id}
         expect(response).to redirect_to(products_path)
       end
+      it "admin can create product" do
+        get :new
+        expect(response).to have_http_status(200)
+      end
+      it "admin user can update product" do
+        get :edit, params: {id: product.id}
+        expect(response).to have_http_status(200)
+      end
     end
     
-    context "when logged in as a non-admin" do
-      before do
-        sign_in user
-      end
-      it "should not allow #new"
-        get :new
-        expect(response).to have_http_status(302)
-      end
-    end
-
+  end
 end
 
