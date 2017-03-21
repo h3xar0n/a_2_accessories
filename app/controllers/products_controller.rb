@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_action :validate_admin, except: [:show, :index]
   # GET /products
   # GET /products.json
+
 def index
   if params[:q]
     search_term = params[:q]
@@ -15,7 +16,7 @@ def index
     else
       @products = Product.all
     end
-end
+  end
 
   # GET /products/1
   # GET /products/1.json

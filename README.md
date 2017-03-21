@@ -22,3 +22,27 @@ This production-ready app is intended to showcase my abilities with Ruby on Rail
 * Memcached for traditional caching  
 * Redis for better use with data structures, less arbitrary data removal
 * Byebug, RSpec, FactoryGirl, and Brakeman for testing, debugging, and security
+
+## To-Do List
+
+### Overarching
+
+* Make more visually appealing/involved
+* Add ability to fill out ordering information before payment
+
+### Front-End
+
+* Create a 404 page
+* Determine where and whether to use Angular, React, and/or Vue
+* Consolidate/reorganize/refactor SCSS
+* Add SASS plugins!!!
+* Create view for orders
+* Images fade in on load
+
+### Back-End
+
+* Even more test coverage. Test, test, test.
+* Fix adding username on signup; currently doesn't save
+* Clean up Gemfile to go in logical order
+* Create logic for orders
+* Read over with Brian's style guide
