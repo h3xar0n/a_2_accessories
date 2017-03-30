@@ -60,8 +60,9 @@ gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~>3.5'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'simplecov', '~> 0.14.1'
 end
 
 gem 'rails-controller-testing'
