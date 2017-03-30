@@ -1499,7 +1499,7 @@
         <li class="missed" data-hits="0" data-linenumber="5">
           
           
-          <code class="ruby">  	ProductChannel.broadcast_to(comment.product_id, comment: render_comment(comment, current_user), average_rating: comment.product.average_rating)</code>
+          <code class="ruby">    ProductChannel.broadcast_to(comment.product_id, comment: render_comment(comment, current_user), average_rating: comment.product.average_rating)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1781,91 +1781,91 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">	def highest_rating_comment</code>
+          <code class="ruby">  def highest_rating_comment</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby"> 		comments.rating_desc.first</code>
+          <code class="ruby">     comments.rating_desc.first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">	def lowest_rating_comment</code>
+          <code class="ruby">  def lowest_rating_comment</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">	  comments.rating_asc.first</code>
+          <code class="ruby">    comments.rating_asc.first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">	def average_rating</code>
+          <code class="ruby">  def average_rating</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">	  comments.average(:rating).to_f</code>
+          <code class="ruby">    comments.average(:rating).to_f</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">	def total_comment</code>
+          <code class="ruby">  def total_comment</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">		unless $redis.keys.include?(&quot;total_comment_#{id}&quot;)</code>
+          <code class="ruby">    unless $redis.keys.include?(&quot;total_comment_#{id}&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby">			$redis.set(&quot;totalComment&quot;, comments.count)</code>
+          <code class="ruby">      $redis.set(&quot;totalComment&quot;, comments.count)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">		$redis.get(&quot;totalComment&quot;)</code>
+          <code class="ruby">    $redis.get(&quot;totalComment&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -2585,49 +2585,49 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">	context &quot;when the product has comments&quot; do</code>
+          <code class="ruby">  context &quot;when the product has comments&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">		before do</code>
+          <code class="ruby">    before do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">			@product = Product.create!(name: &quot;imperial-military&quot;)</code>
+          <code class="ruby">      @product = Product.create!(name: &quot;imperial-military&quot;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">			@user = FactoryGirl.create(:user)</code>
+          <code class="ruby">      @user = FactoryGirl.create(:user)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
-          <code class="ruby">			@product.comments.create!(rating: 1, user: @user, body: &quot;Apology accepted, Captain Needa.&quot;)</code>
+          <code class="ruby">      @product.comments.create!(rating: 1, user: @user, body: &quot;Apology accepted, Captain Needa.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">			@product.comments.create!(rating: 3, user: @user, body: &quot;Take care not to choke on your aspirations, Director.&quot;)</code>
+          <code class="ruby">      @product.comments.create!(rating: 3, user: @user, body: &quot;Take care not to choke on your aspirations, Director.&quot;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
-          <code class="ruby">			@product.comments.create!(rating: 5, user: @user, body: &quot;You are in command now, Admiral Piett.&quot;)</code>
+          <code class="ruby">      @product.comments.create!(rating: 5, user: @user, body: &quot;You are in command now, Admiral Piett.&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -2639,19 +2639,19 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;returns the average rating of all comments&quot; do</code>
+          <code class="ruby">    it &quot;returns the average rating of all comments&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">			expect(@product.average_rating).to eq 3</code>
+          <code class="ruby">      expect(@product.average_rating).to eq 3</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -2663,25 +2663,25 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;is not valid&quot; do</code>
+          <code class="ruby">    it &quot;is not valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">			expect(Product.new(description: &quot;Terrible job and very, very weak. Sad.&quot;)).not_to be_valid</code>
+          <code class="ruby">      expect(Product.new(description: &quot;Terrible job and very, very weak. Sad.&quot;)).not_to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
