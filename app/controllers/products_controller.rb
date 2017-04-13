@@ -36,6 +36,9 @@ def index
 
   # POST /products
   # POST /products.json
+
+  # Try to change to new data model using JSON
+  
   def create
     @product = Product.new(product_params)
 
