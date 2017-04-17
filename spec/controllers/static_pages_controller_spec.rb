@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe StaticPagesController, :type => :controller do
+  
   context 'GET #about' do
     before do
       get :about
